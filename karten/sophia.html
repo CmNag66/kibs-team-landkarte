@@ -1,0 +1,71 @@
+<article id="karte-sophia">
+  <style>
+    #karte-sophia {
+      position: relative;
+      overflow: hidden;
+      padding: 1.6rem 1.4rem;
+      border-radius: 18px;
+      color: #f6ecd2;
+      background: linear-gradient(135deg, #14121c 0%, #241a2e 55%, #3a2633 100%);
+      border: 1px solid rgba(214, 178, 106, 0.45);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    #karte-sophia::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 30%, rgba(255, 223, 150, 0.22) 50%, transparent 70%);
+      transform: translateX(-120%);
+      animation: sophia-schimmer 4.5s ease-in-out infinite;
+      pointer-events: none;
+    }
+    #karte-sophia:hover {
+      transform: translateY(-6px) rotate(-0.6deg);
+      box-shadow: 0 18px 40px rgba(214, 178, 106, 0.35);
+    }
+    #karte-sophia .rolle {
+      margin: 0 0 0.4rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #d6b26a;
+    }
+    #karte-sophia h2 {
+      margin: 0 0 0.8rem;
+      font-size: 2.2rem;
+      background: linear-gradient(90deg, #d6b26a, #fff1c9, #d6b26a);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: sophia-gold 6s linear infinite;
+    }
+    #karte-sophia p {
+      position: relative;
+      line-height: 1.5;
+    }
+    #karte-sophia a {
+      color: #fff1c9;
+      text-decoration: none;
+      border-bottom: 1px solid #d6b26a;
+    }
+    #karte-sophia a:hover {
+      color: #d6b26a;
+    }
+    @keyframes sophia-schimmer {
+      0%, 60% { transform: translateX(-120%); }
+      100% { transform: translateX(120%); }
+    }
+    @keyframes sophia-gold {
+      to { background-position: 200% center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #karte-sophia::before,
+      #karte-sophia h2 { animation: none; }
+    }
+  </style>
+  <p class="rolle">Club-, Marketing- &amp; Eventmanagerin · Rotonda Business Club</p>
+  <h2>Sophia</h2>
+  <p>Ich baue KI-gestützte Abläufe für unsere Events: von der Konzeption über die Einladung bis zur Nachbereitung – weniger Handarbeit, mehr Zeit für die Menschen im Raum.</p>
+</article>
