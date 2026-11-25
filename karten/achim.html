@@ -1,0 +1,21 @@
+<article id="karte-achim">
+  <style>
+    #karte-achim { position: relative; overflow: hidden; background-color: #0B3D2E !important; background-image: radial-gradient(circle, rgba(255,255,255,.9) 1.5px, transparent 2px), radial-gradient(circle, rgba(255,255,255,.6) 1px, transparent 1.5px), linear-gradient(160deg, #0B3D2E 0%, #14532D 60%, #7A1F1F 130%) !important; background-size: 60px 60px, 35px 35px, 100% 100% !important; border: 3px solid #C8102E !important; color: #FFF8E7 !important; animation: achim-schnee 12s linear infinite, achim-lichter 1.6s ease-in-out infinite; transition: transform .35s ease; }
+    #karte-achim::before { content: "🎄"; position: absolute; right: 12px; bottom: 6px; font-size: 3em; opacity: .9; animation: achim-wippen 3s ease-in-out infinite; transform-origin: bottom center; }
+    #karte-achim .rolle { color: #F5C542; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; font-size: 12px; }
+    #karte-achim h2 { color: #FFFFFF !important; font-size: 2em; text-shadow: 0 0 8px rgba(245,197,66,.6); }
+    #karte-achim h2::before { content: "★ "; color: #F5C542; display: inline-block; animation: achim-funkeln 2s ease-in-out infinite; }
+    #karte-achim h2::after { content: " 🎅"; }
+    #karte-achim p { color: #FFF8E7; position: relative; }
+    #karte-achim p:last-of-type::after { content: "Frohe Weihnachten!"; display: block; margin-top: .6em; color: #F5C542; font-style: italic; font-weight: 700; }
+    #karte-achim:hover { transform: scale(1.04) rotate(-1deg); }
+    #karte-achim:hover::before { animation: achim-wippen .5s ease-in-out infinite; }
+    @keyframes achim-schnee { from { background-position: 0 0, 0 0, 0 0; } to { background-position: 30px 600px, -20px 350px, 0 0; } }
+    @keyframes achim-lichter { 0%, 100% { box-shadow: 0 0 10px #C8102E, inset 0 0 0 2px #F5C542; } 50% { box-shadow: 0 0 22px #F5C542, inset 0 0 0 2px #2E8B57; } }
+    @keyframes achim-funkeln { 0%, 100% { transform: scale(1) rotate(0deg); opacity: .7; } 50% { transform: scale(1.4) rotate(180deg); opacity: 1; } }
+    @keyframes achim-wippen { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+  </style>
+  <p class="rolle">Teilnehmer · Modul 4</p>
+  <h2>Achim</h2>
+  <p>Ich bin dabei und baue gerade an meinem Modul-4-Projekt.</p>
+</article>

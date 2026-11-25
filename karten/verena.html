@@ -1,0 +1,20 @@
+<article id="karte-verena">
+  <style>
+    #karte-verena { background: radial-gradient(circle at 20% 15%, #1B6B73, #0B3A44 70%) !important; border: 3px solid #D4A15A !important; border-radius: 36px !important; color: #FBF5E6; animation: verena-schweben 5s ease-in-out infinite; box-shadow: 0 10px 30px rgba(212,161,90,.25); }
+    #karte-verena .rolle { display: inline-block; color: #0B3A44; background: linear-gradient(90deg, #D4A15A, #B76E4F, #D4A15A); background-size: 200% 100%; animation: verena-glanz 4s linear infinite; padding: 4px 14px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    #karte-verena h2 { font-family: Georgia, serif; color: #FBF5E6; }
+    #karte-verena p { color: #FBF5E6; }
+    #karte-verena:hover { transform: scale(1.04) rotate(1deg); transition: transform .35s; }
+    #karte-verena::before, #karte-verena::after { content: ""; position: absolute; left: 0; right: 0; top: -100%; height: 200%; pointer-events: none; background-repeat: repeat; }
+    #karte-verena::before { background-image: radial-gradient(circle, #fff 0 2px, transparent 3px), radial-gradient(circle, #fff 0 1.5px, transparent 2.5px), radial-gradient(circle, #fff 0 3px, transparent 4px); background-size: 90px 130px, 60px 85px, 130px 170px; background-position: 10px 0, 40px 30px, 70px 60px; opacity: .85; animation: verena-schnee 9s linear infinite; }
+    #karte-verena::after { background-image: radial-gradient(circle, #fff 0 1px, transparent 2px), radial-gradient(circle, #fff 0 2px, transparent 3px); background-size: 50px 70px, 110px 150px; background-position: 25px 10px, 5px 50px; opacity: .6; animation: verena-schnee 6s linear infinite; }
+    #karte-verena > * { position: relative; z-index: 1; }
+    @keyframes verena-schnee { to { transform: translateY(50%); } }
+    @keyframes verena-schweben { 50% { translate: 0 -6px; } }
+    @keyframes verena-glanz { to { background-position: 200% 0; } }
+  </style>
+  <p class="rolle">HR Director – Modul 4</p>
+  <h2>Verena</h2>
+  <p>Ich baue das Büro-Bestiarium.</p>
+  <p>Mein Projekt sammelt Wissen, designt eine Homepage und ist Social-Media-Content-Creator und Redaktion zu HR-Themen.</p>
+</article>
