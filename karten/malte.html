@@ -1,0 +1,68 @@
+<article id="karte-malte">
+  <style>
+    #karte-malte {
+      background: #FFFFFF !important;
+      border: 1px solid #D9DEE6 !important;
+      border-left: 4px solid #206D56 !important;
+      border-radius: 10px !important;
+      color: #3D3E40;
+      font-family: "Merriweather Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      padding-bottom: 34px !important;
+      box-shadow: 0 6px 18px rgba(45, 77, 93, .08);
+      transition: transform .4s ease, box-shadow .4s ease;
+    }
+    #karte-malte:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(45, 77, 93, .25);
+    }
+    #karte-malte .rolle {
+      margin: 0 !important;
+      color: #8C8F90;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    #karte-malte h2 {
+      margin: 8px 0 6px !important;
+      color: #2D4D5D;
+      font-size: 28px !important;
+      font-weight: 700;
+      letter-spacing: .01em;
+    }
+    #karte-malte h2::after {
+      content: "";
+      display: block;
+      width: 36px;
+      height: 3px;
+      margin-top: 8px;
+      border-radius: 2px;
+      background: #709D8E;
+    }
+    #karte-malte p { color: #3D3E40; }
+    /* Heizkreis: warmes Wasser fließt ruhig durch das Rohr am unteren Rand */
+    #karte-malte::after {
+      content: "";
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 16px;
+      height: 6px;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #ECEEF6 0%, #ECEEF6 30%, #71B280 45%, #206D56 55%, #ECEEF6 70%, #ECEEF6 100%);
+      background-size: 300% 100%;
+      animation: malte-waerme 7s ease-in-out infinite;
+    }
+    #karte-malte:hover::after { animation-duration: 3.5s; }
+    @keyframes malte-waerme {
+      from { background-position: 100% 0; }
+      to { background-position: 0% 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #karte-malte::after { animation: none; background-position: 50% 0; }
+    }
+  </style>
+  <p class="rolle">Geschäftsführer · Grunwald GmbH</p>
+  <h2>Malte</h2>
+  <p>Ich baue eine Anwendung zur Auslegung von Fußbodenheizungen.</p>
+</article>
