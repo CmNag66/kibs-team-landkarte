@@ -12,6 +12,11 @@ const dateien = fs.readdirSync(path.join(wurzel, "karten")).filter((f) => f.ends
 const karten = dateien.map((f) => {
   let t = fs.readFileSync(path.join(wurzel, "karten", f), "utf8");
   t = t.replace(/<script\b[\s\S]*?<\/script>/gi, "").replace(/\son\w+\s*=\s*("[^"]*"|'[^']*')/gi, "");
+  t = t.slice(0, 20000).replace(/<\/?(html|head|body|main)\b[^>]*>/gi, "");
+  // Ein vergessenes </article> oder </style> darf die folgenden Karten nicht verschlucken.
+  const fehlt = (tag) => (t.match(new RegExp(`<${tag}\\b`, "gi")) || []).length - (t.match(new RegExp(`</${tag}>`, "gi")) || []).length;
+  if (fehlt("style") > 0) t += "</style>".repeat(fehlt("style"));
+  if (fehlt("article") > 0) t += "</article>".repeat(fehlt("article"));
   if (!t.includes("<article")) {
     const name = esc(path.basename(f, ".html"));
     t = `<article id="karte-${name}"><h2>${name}</h2><p>${esc(t.trim().slice(0, 300))}</p></article>`;
