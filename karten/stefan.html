@@ -1,0 +1,17 @@
+<article id="karte-stefan">
+  <style>
+    #karte-stefan { position: relative; overflow: hidden; background: radial-gradient(circle at 15% 10%, #2a8a8f 0%, #0e5c63 45%, #073b40 100%) !important; border: 2px solid #4fb3b5 !important; color: #e8f6f6 !important; transition: transform .35s ease, box-shadow .35s ease; }
+    #karte-stefan::after { content: ""; position: absolute; top: 0; left: -60%; width: 40%; height: 100%; background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .18), transparent); transform: skewX(-20deg); animation: stefan-glanz 6s ease-in-out infinite; pointer-events: none; }
+    #karte-stefan .rolle { color: #9fdcdc; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; font-size: 12px; }
+    #karte-stefan h2 { color: #ffffff !important; font-size: 2.1em; }
+    #karte-stefan h2::after { content: " ◆"; color: #6fd0d0; display: inline-block; font-size: .6em; vertical-align: middle; animation: stefan-pulsieren 3s ease-in-out infinite; }
+    #karte-stefan p { color: #e8f6f6; }
+    #karte-stefan:hover { transform: translateY(-5px); box-shadow: 0 12px 28px rgba(7, 59, 64, .55), 0 0 0 3px rgba(79, 179, 181, .35); }
+    @keyframes stefan-glanz { 0%, 60% { left: -60%; } 100% { left: 130%; } }
+    @keyframes stefan-pulsieren { 0%, 100% { opacity: .5; transform: scale(1); } 50% { opacity: 1; transform: scale(1.3); } }
+    @media (prefers-reduced-motion: reduce) { #karte-stefan::after, #karte-stefan h2::after { animation: none; } }
+  </style>
+  <p class="rolle">Teilnehmer · Modul 4</p>
+  <h2>Stefan</h2>
+  <p>Was ich in Modul 4 baue? Noch nicht entschieden – Fortsetzung folgt.</p>
+</article>

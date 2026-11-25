@@ -1,11 +1,71 @@
 <article id="karte-niklas">
   <style>
-    #karte-niklas { background: linear-gradient(135deg, #012F42, #0E5F86) !important; border-color: #FFBD59 !important; }
-    #karte-niklas .rolle { color: #FFBD59; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: 12px; }
-    #karte-niklas:hover { transform: rotate(-1.5deg) scale(1.03); transition: transform .3s; }
+    #karte-niklas {
+      background: linear-gradient(140deg, #012F42 0%, #0E5F86 70%, #1B7FA8 100%) !important;
+      border: 2px solid #FFBD59 !important;
+      color: #F4F8FA;
+      transition: transform .35s cubic-bezier(.2,.9,.3,1.4), box-shadow .35s;
+    }
+    #karte-niklas:hover {
+      transform: rotate(-1.5deg) scale(1.03) !important;
+      box-shadow: 0 14px 34px rgba(255, 189, 89, .28);
+    }
+    /* bunte Bausteine, die wie im Kita-Spielzimmer herumschweben */
+    #karte-niklas::before {
+      content: "";
+      position: absolute; inset: -20%;
+      background:
+        radial-gradient(circle at 12% 18%, #FFBD59 0 6px, transparent 7px),
+        radial-gradient(circle at 86% 24%, #FF7A8A 0 5px, transparent 6px),
+        radial-gradient(circle at 74% 82%, #7ED9A6 0 7px, transparent 8px),
+        radial-gradient(circle at 22% 88%, #8AB8FF 0 5px, transparent 6px),
+        radial-gradient(circle at 52% 8%, #C79BFF 0 4px, transparent 5px);
+      opacity: .55;
+      animation: niklas-schweben 9s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+    /* kleine Sprechblase oben rechts */
+    #karte-niklas::after {
+      content: "KI? Klar!";
+      position: absolute; top: 16px; right: 16px;
+      padding: 5px 11px;
+      border-radius: 14px 14px 14px 4px;
+      background: #FFBD59; color: #012F42;
+      font-size: 12px; font-weight: 800; letter-spacing: .03em;
+      animation: niklas-wippen 2.4s ease-in-out infinite;
+    }
+    #karte-niklas > * { position: relative; z-index: 1; }
+    #karte-niklas .rolle {
+      color: #FFBD59; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; font-size: 12px;
+    }
+    #karte-niklas h2 { color: #FFFFFF; }
+    #karte-niklas .projekt { color: #FFBD59; font-weight: 700; }
+    #karte-niklas p a {
+      display: inline-block; margin-top: 8px;
+      padding: 7px 14px; border-radius: 999px;
+      background: #FFBD59; color: #012F42 !important;
+      font-weight: 700; text-decoration: none;
+      transition: transform .2s, background .2s;
+    }
+    #karte-niklas p a:hover,
+    #karte-niklas p a:focus-visible {
+      background: #FFD48F; transform: translateY(-2px);
+    }
+    @keyframes niklas-schweben {
+      from { transform: translate(0, 0) rotate(0deg); }
+      to   { transform: translate(4%, -3%) rotate(6deg); }
+    }
+    @keyframes niklas-wippen {
+      0%, 100% { transform: rotate(-4deg); }
+      50%      { transform: rotate(4deg) translateY(-2px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #karte-niklas::before, #karte-niklas::after { animation: none; }
+    }
   </style>
   <p class="rolle">Trainer · Modul 4</p>
   <h2>Niklas</h2>
-  <p>Ich baue mit acht KI-Agenten, die Synnous den Alltag abnehmen.</p>
-  <p><a href="https://www.synnous.ai/modul-4/projekte">Eure Projekte ansehen ↗</a></p>
+  <p>Ich baue <span class="projekt">KI-Medienkompetenz Kita</span>: eine Website, die Kindern und Lehrkräften hilft, KI zu verstehen und sicher damit zu arbeiten – spielerisch, neugierig und mit kritischem Blick.</p>
+  <p><a href="https://ki-medienkompetenz-kita.vercel.app/">Zum Projekt ↗</a></p>
 </article>

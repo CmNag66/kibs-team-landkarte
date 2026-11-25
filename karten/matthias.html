@@ -1,0 +1,143 @@
+<article id="karte-matthias">
+  <style>
+    #karte-matthias {
+      background: linear-gradient(135deg, #2b0a4a 0%, #4a1070 35%, #0d4f6b 70%, #0b6b5a 100%) !important;
+      background-size: 300% 300% !important;
+      border: none !important;
+      padding: 26px 22px 22px !important;
+      isolation: isolate;
+      transition: transform .45s cubic-bezier(.2,.9,.3,1.4), box-shadow .45s ease;
+      box-shadow: 0 0 0 rgba(255, 120, 220, 0);
+    }
+    /* Regenbogen-Rahmen, der sich dreht */
+    #karte-matthias::before {
+      content: "";
+      position: absolute;
+      inset: -60%;
+      z-index: -2;
+      background: conic-gradient(from 0deg, #ff5fa2, #ffb347, #fff275, #6dffb0, #5fd4ff, #b48cff, #ff5fa2);
+      animation: matthias-drehen 6s linear infinite;
+    }
+    /* Innenfläche mit wanderndem Farbverlauf */
+    #karte-matthias::after {
+      content: "";
+      position: absolute;
+      inset: 3px;
+      z-index: -1;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #2b0a4a 0%, #4a1070 35%, #0d4f6b 70%, #0b6b5a 100%);
+      background-size: 300% 300%;
+      animation: matthias-fliessen 9s ease-in-out infinite;
+    }
+    #karte-matthias:hover {
+      transform: translateY(-8px) rotate(-1.2deg) scale(1.03);
+      box-shadow: 0 20px 50px rgba(255, 95, 162, .45), 0 0 40px rgba(95, 212, 255, .35);
+    }
+    #karte-matthias .rolle {
+      display: inline-block;
+      margin: 0 0 10px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #2b0a4a;
+      background: linear-gradient(90deg, #fff275, #ffb347, #ff5fa2);
+      box-shadow: 0 0 14px rgba(255, 242, 117, .55);
+      animation: matthias-huepfen 2.4s ease-in-out infinite;
+    }
+    #karte-matthias h2 {
+      position: relative;
+      font-size: 40px !important;
+      font-weight: 900;
+      letter-spacing: -.01em;
+      background: linear-gradient(90deg, #ff5fa2, #ffb347, #fff275, #6dffb0, #5fd4ff, #b48cff, #ff5fa2);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: matthias-regenbogen 4s linear infinite;
+      filter: drop-shadow(0 0 10px rgba(255, 95, 162, .45));
+    }
+    /* Die Waage tanzt oben rechts */
+    #karte-matthias .waage {
+      position: absolute;
+      top: 62px;
+      right: 20px;
+      margin: 0;
+      font-size: 34px;
+      transform-origin: 50% 20%;
+      animation: matthias-waage 2.2s ease-in-out infinite;
+      filter: drop-shadow(0 0 8px rgba(255, 242, 117, .6));
+    }
+    #karte-matthias .bau {
+      position: relative;
+      max-width: calc(100% - 52px);
+      color: #fdf6ff;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    #karte-matthias .bau strong {
+      color: #fff275;
+    }
+    /* Mails fliegen davon, Häkchen landen */
+    #karte-matthias .flug {
+      position: absolute;
+      right: 16px;
+      bottom: 14px;
+      width: 46px;
+      height: 120px;
+      margin: 0;
+      pointer-events: none;
+    }
+    #karte-matthias .flug span {
+      position: absolute;
+      left: 8px;
+      bottom: 0;
+      font-size: 24px;
+      opacity: 0;
+    }
+    #karte-matthias .flug .mail { animation: matthias-tschuess 3.6s ease-in infinite; }
+    #karte-matthias .flug .mail2 { animation: matthias-tschuess 3.6s ease-in 1.8s infinite; }
+    #karte-matthias .flug .ok { animation: matthias-landen 3.6s ease-out .9s infinite; }
+    #karte-matthias .flug .ok2 { animation: matthias-landen 3.6s ease-out 2.7s infinite; }
+    #karte-matthias:hover .flug span { animation-duration: 1.6s; }
+
+    @keyframes matthias-drehen { to { transform: rotate(360deg); } }
+    @keyframes matthias-fliessen {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    @keyframes matthias-regenbogen { to { background-position: 200% center; } }
+    @keyframes matthias-huepfen {
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-3px) rotate(2deg); }
+    }
+    @keyframes matthias-waage {
+      0%, 100% { transform: rotate(-14deg); }
+      50% { transform: rotate(14deg) scale(1.12); }
+    }
+    @keyframes matthias-tschuess {
+      0% { opacity: 0; transform: translate(0, 0) rotate(0) scale(.8); }
+      15% { opacity: 1; }
+      100% { opacity: 0; transform: translate(40px, -120px) rotate(35deg) scale(.4); }
+    }
+    @keyframes matthias-landen {
+      0% { opacity: 0; transform: translate(-20px, -110px) scale(.4) rotate(-30deg); }
+      60% { opacity: 1; transform: translate(0, 0) scale(1.25) rotate(0); }
+      80% { transform: scale(.95); }
+      100% { opacity: 0; transform: scale(1); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #karte-matthias::before, #karte-matthias::after, #karte-matthias *,
+      #karte-matthias .waage { animation: none !important; }
+      #karte-matthias .flug { display: none; }
+    }
+  </style>
+  <p class="rolle">One-Man-Legal-Show</p>
+  <h2>Matthias</h2>
+  <p class="waage" aria-hidden="true">⚖️</p>
+  <p class="bau">Ich baue ein <strong>Order-Intake-System</strong> für Rechtsabteilungen, um mich von der guten alten E-Mail zu lösen und Workflows zu automatisieren, ohne meine Aufsicht über die KI zu verlieren.</p>
+  <p class="flug" aria-hidden="true"><span class="mail">✉️</span><span class="mail2">📧</span><span class="ok">✅</span><span class="ok2">✨</span></p>
+</article>
