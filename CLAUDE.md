@@ -1,16 +1,15 @@
 # Die Modul-4-Wand
 
 Eine Website, an der die ganze Gruppe der KI Business School gleichzeitig baut. Jede Person hat eine
-eigene Karte als eigene Datei in `karten/`. Bei jedem Push setzt GitHub Actions alle Karten zu einer
-Seite zusammen und veröffentlicht sie nach etwa einer Minute unter
-https://cmnag66.github.io/kibs-team-landkarte/
+eigene Karte als eigene Datei in `karten/`. Bei jedem Push nach GitHub baut Vercel die Seite neu und
+veröffentlicht sie nach etwa 30 Sekunden unter https://modul4-wand.vercel.app
 
 ## Regeln für Claude
 
 - Antworte auf Deutsch und duze.
 - **Lege nur eine einzige Datei an oder ändere nur sie: `karten/<vorname>.html`**, Vorname klein, ohne
   Umlaute und Leerzeichen (z. B. `karten/juergen.html`). Ändere nie eine andere Datei, auch nicht die
-  Karte einer anderen Person und nichts in `.github/`.
+  Karte einer anderen Person und nichts in `bau/`.
 - Frag zuerst nach Vorname, Rolle, was die Person in Modul 4 baut (ein Satz), optional dem Link zur
   eigenen Seite, und wie verrückt die Karte aussehen soll (Farben, Stimmung, Effekt).
 - Aufbau der Datei, genau so:
@@ -31,9 +30,9 @@ https://cmnag66.github.io/kibs-team-landkarte/
 - Dann: `git pull --rebase`, committen mit „Karte von <Vorname>“, `git push`. Wird der Push abgelehnt,
   noch einmal `git pull --rebase` und pushen. Da jede Person nur ihre eigene Datei ändert, gibt es keine
   Konflikte.
-- Sag am Ende in einem Satz, dass die Karte in etwa einer Minute auf der Wand erscheint, mit Link.
+- Sag am Ende in einem Satz, dass Vercel die Karte jetzt baut und sie in etwa 30 Sekunden auf https://modul4-wand.vercel.app erscheint.
 
 ## Seiten-Check
 
 Im Projekt liegt der Skill `.claude/skills/seiten-check/`. `/seiten-check` prüft die Wand
-(`.github/bau/rahmen.html` und die Karten) an fünf Punkten, bevor man sie teilt.
+(`bau/rahmen.html` und die Karten) an fünf Punkten, bevor man sie teilt.

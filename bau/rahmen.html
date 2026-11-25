@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Die Modul-4-Wand · KI Business School</title>
+<meta name="robots" content="noindex">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; color: #fff;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background:
+      radial-gradient(900px 520px at 88% -10%, rgba(40,161,215,.25), rgba(40,161,215,0) 60%),
+      radial-gradient(700px 420px at -10% 110%, rgba(255,189,89,.12), rgba(255,189,89,0) 60%),
+      #021E2B;
+  }
+  .innen { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+  header { padding-top: 40px; display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px; }
+  .augenbraue { margin: 0 0 10px; color: #28A1D7; font-size: 13px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+  h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(40px, 6vw, 76px); line-height: 1; }
+  h1 span { color: #FFBD59; }
+  .zahl { margin: 0; font-size: 18px; color: #A9C0CC; }
+  .zahl b { font-size: 56px; color: #FFBD59; font-family: Georgia, serif; margin-right: 8px; }
+
+  /* Der Weg einer Änderung: Claude Code → GitHub → Vercel → Wand */
+  .weg { margin: 28px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid rgba(40,161,215,.3); border-radius: 16px; overflow: hidden; }
+  .weg div { padding: 14px 16px; background: rgba(10,58,82,.6); position: relative; }
+  .weg div + div { border-left: 1px solid rgba(40,161,215,.3); }
+  .weg b { display: block; font-size: 15px; }
+  .weg small { color: #A9C0CC; font-size: 13px; }
+  .weg i { position: absolute; top: 14px; right: 14px; width: 10px; height: 10px; border-radius: 50%; background: #28A1D7; box-shadow: 0 0 0 0 rgba(40,161,215,.7); animation: puls 2s infinite; }
+  .weg div:nth-child(2) i { animation-delay: .5s; } .weg div:nth-child(3) i { animation-delay: 1s; } .weg div:nth-child(4) i { animation-delay: 1.5s; background: #FFBD59; }
+  @keyframes puls { 0% { box-shadow: 0 0 0 0 rgba(40,161,215,.7); } 70% { box-shadow: 0 0 0 12px rgba(40,161,215,0); } 100% { box-shadow: 0 0 0 0 rgba(40,161,215,0); } }
+  @media (max-width: 700px) { .weg { grid-template-columns: 1fr 1fr; } .weg div:nth-child(3) { border-left: 0; } .weg div:nth-child(n+3) { border-top: 1px solid rgba(40,161,215,.3); } }
+
+  .zuletzt { margin: 14px 0 0; font-size: 14px; color: #A9C0CC; }
+  .zuletzt b { color: #fff; } .zuletzt code { color: #FFBD59; }
+
+  #wand { padding: 24px 0 56px; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+  /* Grundform jeder Karte. Jede Karte darf sich mit #karte-<name> selbst umstylen. */
+  #wand > article {
+    position: relative; min-height: 190px; padding: 22px; border-radius: 18px; overflow: hidden;
+    background: #0A3A52; border: 1px solid rgba(40,161,215,.3); animation: rein .7s cubic-bezier(.2,.9,.3,1.3) both;
+  }
+  #wand > article h2 { margin: 0 0 4px; font-size: 26px; }
+  #wand > article p { margin: 6px 0 0; line-height: 1.45; }
+  #wand > article a { color: inherit; }
+  #wand > .frei { min-height: 190px; border: 2px dashed rgba(40,161,215,.25); border-radius: 18px; display: grid; place-items: center; color: rgba(169,192,204,.6); font-size: 15px; }
+  @keyframes rein { from { opacity: 0; transform: translateY(24px) scale(.92); } to { opacity: 1; transform: none; } }
+
+  .so { padding: 0 0 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .so div { padding: 18px; border-radius: 16px; background: rgba(10,58,82,.5); border: 1px solid rgba(40,161,215,.2); }
+  .so b { color: #FFBD59; font-family: Georgia, serif; font-size: 22px; margin-right: 6px; }
+  .so p { margin: 6px 0 0; color: #DCE8EE; font-size: 15px; line-height: 1.45; }
+  .so code { color: #FFBD59; }
+  footer { text-align: center; color: #7F9BAA; font-size: 13px; padding: 0 24px 32px; }
+</style>
+</head>
+<body>
+<div class="innen">
+  <header>
+    <div>
+      <p class="augenbraue">KI Business School · Modul 4 · Ein Projekt, viele Hände</p>
+      <h1>Die Modul-4-<span>Wand.</span></h1>
+    </div>
+    <p class="zahl"><b id="zahl">{{ZAHL}}</b>Karten</p>
+  </header>
+
+  <div class="weg" aria-label="Der Weg einer Änderung">
+    <div><i></i><b>Claude Code</b><small>Du sagst, was Du willst</small></div>
+    <div><i></i><b>GitHub</b><small>Claude pusht Deine Datei</small></div>
+    <div><i></i><b>Vercel</b><small>baut die Seite neu</small></div>
+    <div><i></i><b>Die Wand</b><small>Deine Karte ist live</small></div>
+  </div>
+  <p class="zuletzt" id="zuletzt">Letzter Push: <b>{{NACHRICHT}}</b> {{WER}} · Commit <code>{{SHA}}</code> · live seit {{ZEIT}} Uhr</p>
+
+  <main id="wand">
+{{KARTEN}}
+  </main>
+
+  <section class="so" aria-label="So machst Du mit">
+    <div><b>1</b>Einladung annehmen<p><code>github.com/CmNag66/kibs-team-landkarte/invitations</code></p></div>
+    <div><b>2</b>Claude Code öffnen<p>Neuer Chat mit dem Repository <code>kibs-team-landkarte</code>.</p></div>
+    <div><b>3</b>Sagen, was Du willst<p>„Bau meine Karte für die Wand.“ Danach ändern, so oft Du willst.</p></div>
+  </section>
+</div>
+<footer>Jede Karte ist eine eigene Datei in <code>karten/</code>. Gebaut mit Claude Code, gespeichert auf GitHub, veröffentlicht von Vercel.</footer>
+<script>
+  // Lädt die Wand alle 10 Sekunden neu, ohne Flackern. Neue Karten fliegen rein.
+  setInterval(async () => {
+    try {
+      const r = await fetch(location.pathname + "?t=" + Date.now(), { cache: "no-store" });
+      const doc = new DOMParser().parseFromString(await r.text(), "text/html");
+      for (const id of ["wand", "zahl", "zuletzt"]) {
+        const neu = doc.getElementById(id), alt = document.getElementById(id);
+        if (neu && alt && neu.innerHTML !== alt.innerHTML) alt.innerHTML = neu.innerHTML;
+      }
+    } catch (e) {}
+  }, 10000);
+</script>
+</body>
+</html>
