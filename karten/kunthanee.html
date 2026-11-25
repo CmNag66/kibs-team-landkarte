@@ -1,0 +1,28 @@
+<article id="karte-kunthanee">
+  <style>
+    #karte-kunthanee { position: relative; overflow: hidden; background: linear-gradient(180deg, #0b1020 0%, #1d2a44 60%, #e8eef5 100%) !important; border: 2px solid #f2c200 !important; color: #f4f1ea; }
+    #karte-kunthanee .baum { position: absolute; left: 50%; bottom: 0; width: 70%; max-width: 260px; transform: translateX(-50%); opacity: .85; z-index: 0; pointer-events: none; animation: kunthanee-wiegen 6s ease-in-out infinite; transform-origin: 50% 100%; }
+    #karte-kunthanee::before { content: ""; position: absolute; top: -10px; left: 0; width: 4px; height: 4px; border-radius: 50%; background: transparent; z-index: 1; pointer-events: none; box-shadow: 12px 10px #fff, 48px 60px #fff, 90px 20px #fff, 130px 90px #fff, 170px 40px #fff, 210px 120px #fff, 250px 70px #fff, 30px 150px #fff, 110px 170px #fff, 190px 200px #fff, 70px 230px #fff, 230px 260px #fff; animation: kunthanee-schnee 7s linear infinite; }
+    #karte-kunthanee::after { content: ""; position: absolute; top: 0; left: -20%; width: 140%; height: 3px; background: linear-gradient(90deg, transparent, #fff, transparent); transform: rotate(-28deg) scaleX(0); transform-origin: 0 50%; z-index: 3; pointer-events: none; opacity: 0; }
+    #karte-kunthanee:hover::after { animation: kunthanee-hieb .5s ease-out forwards; }
+    #karte-kunthanee > :not(.baum):not(style) { position: relative; z-index: 2; }
+    #karte-kunthanee .rolle { color: #f2c200; font-weight: 900; letter-spacing: .25em; text-transform: uppercase; font-size: 13px; text-shadow: 2px 2px 0 #c1121f; }
+    #karte-kunthanee h2 { color: #f2c200; text-shadow: 3px 3px 0 #c1121f, 0 0 12px rgba(0,0,0,.8); letter-spacing: .08em; }
+    #karte-kunthanee h2::after { content: " 修羅"; font-size: .6em; color: #c1121f; text-shadow: none; }
+    #karte-kunthanee p { text-shadow: 0 1px 6px #000; }
+    @keyframes kunthanee-schnee { from { transform: translateY(0); } to { transform: translateY(300px); } }
+    @keyframes kunthanee-wiegen { 0%, 100% { transform: translateX(-50%) rotate(-1deg); } 50% { transform: translateX(-50%) rotate(1deg); } }
+    @keyframes kunthanee-hieb { 0% { opacity: 1; transform: rotate(-28deg) scaleX(0); } 60% { opacity: 1; transform: rotate(-28deg) scaleX(1); } 100% { opacity: 0; transform: rotate(-28deg) scaleX(1); } }
+  </style>
+  <svg class="baum" viewBox="0 0 200 160" aria-hidden="true">
+    <path d="M100 160 L96 100 L70 70 M96 100 L100 60 M98 110 L132 76" stroke="#2a1a14" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <g fill="#c1121f">
+      <circle cx="68" cy="62" r="24"/><circle cx="100" cy="40" r="28"/><circle cx="134" cy="66" r="24"/>
+      <circle cx="84" cy="80" r="18"/><circle cx="118" cy="82" r="18"/>
+    </g>
+    <g fill="#e23d28"><circle cx="90" cy="50" r="12"/><circle cx="124" cy="58" r="10"/><circle cx="62" cy="68" r="9"/></g>
+  </svg>
+  <p class="rolle">KI-ller</p>
+  <h2>Kunthanee</h2>
+  <p>Ich baue CKeyDGold, mein eigenes Projekt in Modul 4, und kämpfe dafür im Schnee unter dem Ahornbaum.</p>
+</article>
