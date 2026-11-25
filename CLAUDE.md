@@ -1,33 +1,39 @@
-# Team-Landkarte: Wer kann was mit KI?
+# Die Modul-4-Wand
 
-Eine kleine Seite, auf der ein Team festhält, wer welches KI-Werkzeug wofür nutzt. Beispielprojekt aus
-der KI Business School, Modul 4, Woche 4 (25.11.2026): Daran üben wir, ein Projekt über GitHub zu teilen
-und einen Skill laufen zu lassen, der mit dem Projekt mitreist.
-
-## Was hier liegt
-
-- `index.html`: die ganze Seite, ohne Framework, läuft so auf Vercel
-- `.claude/skills/seiten-check/`: ein Skill, der die Seite prüft, bevor man sie teilt. Wer dieses Projekt
-  öffnet, hat ihn automatisch. Aufruf: `/seiten-check`
+Eine Website, an der die ganze Gruppe der KI Business School gleichzeitig baut. Jede Person hat eine
+eigene Karte als eigene Datei in `karten/`. Bei jedem Push setzt GitHub Actions alle Karten zu einer
+Seite zusammen und veröffentlicht sie nach etwa einer Minute unter
+https://cmnag66.github.io/kibs-team-landkarte/
 
 ## Regeln für Claude
 
 - Antworte auf Deutsch und duze.
-- Die Seite sammelt keine Daten: kein Formular, das etwas verschickt, kein Analyse-Skript, keine Cookies.
-- Vor jeder Änderung kurz sagen, was Du ändern willst, und auf mein Ja warten.
-- Nach jeder Änderung committen, mit einer Nachricht, die sagt, was besser wurde.
-- Wir arbeiten zu mehreren an diesem Projekt. Hol Dir vor dem Arbeiten den neuesten Stand (`git pull`).
+- **Lege nur eine einzige Datei an oder ändere nur sie: `karten/<vorname>.html`**, Vorname klein, ohne
+  Umlaute und Leerzeichen (z. B. `karten/juergen.html`). Ändere nie eine andere Datei, auch nicht die
+  Karte einer anderen Person und nichts in `.github/`.
+- Frag zuerst nach Vorname, Rolle, was die Person in Modul 4 baut (ein Satz), optional dem Link zur
+  eigenen Seite, und wie verrückt die Karte aussehen soll (Farben, Stimmung, Effekt).
+- Aufbau der Datei, genau so:
+  ```html
+  <article id="karte-<vorname>">
+    <style> /* jede Regel beginnt mit #karte-<vorname> */ </style>
+    <p class="rolle">…</p>
+    <h2>Vorname</h2>
+    <p>Was ich baue …</p>
+    <p><a href="https://…">Meine Seite ↗</a></p>
+  </article>
+  ```
+- Gestaltung nur mit CSS im `<style>` der Karte, jede Regel mit `#karte-<vorname>` vorn, damit nichts
+  auf andere Karten wirkt. Animationen, Farbverläufe, Hover-Effekte sind ausdrücklich erwünscht.
+  Keyframes mit dem Vornamen als Präfix benennen (`@keyframes juergen-wackeln`). Kein `<script>`, keine
+  Bilder oder Schriften von fremden Servern.
+- Keine vertraulichen Daten, keine Namen von Kundschaft.
+- Dann: `git pull --rebase`, committen mit „Karte von <Vorname>“, `git push`. Wird der Push abgelehnt,
+  noch einmal `git pull --rebase` und pushen. Da jede Person nur ihre eigene Datei ändert, gibt es keine
+  Konflikte.
+- Sag am Ende in einem Satz, dass die Karte in etwa einer Minute auf der Wand erscheint, mit Link.
 
-## Eigene Karte eintragen
+## Seiten-Check
 
-Die Gruppe der KI Business School arbeitet gleichzeitig in diesem Repository. Jede Person trägt eine
-eigene Karte ein.
-
-1. Hol den neuesten Stand (`git pull`).
-2. Frag nach Vorname, Rolle, ein bis drei KI-Werkzeugen und einem Satz, wofür die Person sie nutzt.
-3. Füge eine neue Karte im selben Aufbau wie die anderen direkt über dem Kommentar
-   `Neue Karten hier drüber einfügen` ein. Ändere keine Karte einer anderen Person.
-4. Committe mit der Nachricht „Karte von [Vorname]“ und pushe direkt auf `main`.
-5. Wird der Push abgelehnt, weil jemand schneller war: `git pull --rebase`. Gibt es dabei einen Konflikt
-   in `index.html`, behalte alle Karten, die eigene zuletzt, und pushe erneut. Sag mir in einem Satz,
-   was passiert ist.
+Im Projekt liegt der Skill `.claude/skills/seiten-check/`. `/seiten-check` prüft die Wand
+(`.github/bau/rahmen.html` und die Karten) an fünf Punkten, bevor man sie teilt.
