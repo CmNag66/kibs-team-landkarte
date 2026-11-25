@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team-Landkarte</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 0; background: #f4f6f8; color: #1d2a33; }
+  header { background: #012F42; color: #fff; padding: 28px 20px; }
+  header h1 { margin: 0 0 6px; font-size: 28px; }
+  header p { margin: 0; color: #9fb3bf; font-size: 13px; }
+  main { max-width: 960px; margin: 0 auto; padding: 20px; }
+  .raster { display: grid; grid-template-columns: repeat(3, 300px); gap: 16px; }
+  .karte { background: #fff; border-radius: 10px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .karte h3 { margin: 0 0 4px; font-size: 17px; }
+  .kreis { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; color: #fff; margin-bottom: 10px; }
+  .karte .rolle { color: #8a98a3; font-size: 13px; margin: 0 0 10px; }
+  .werkzeug { display: inline-block; background: #e3f3fb; color: #12688f; border-radius: 99px; padding: 3px 10px; font-size: 12px; margin: 0 4px 4px 0; }
+  .karte p.wofuer { font-size: 14px; margin: 10px 0 0; }
+  footer { text-align: center; font-size: 12px; color: #8a98a3; padding: 30px 0; }
+  a.knopf { display: inline-block; background: #28A1D7; color: #fff; padding: 6px 12px; border-radius: 6px; font-size: 13px; text-decoration: none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Team-Landkarte</h1>
+  <p>Wer bei uns welches KI-Werkzeug wofür nutzt. TODO: Satz für neue Kolleg*innen ergänzen</p>
+</header>
+<main>
+  <h3>Unser Team</h3>
+  <div class="raster">
+    <div class="karte">
+      <div class="kreis" style="background: #012F42;">A</div>
+      <h3>Anna</h3>
+      <p class="rolle">Vertrieb</p>
+      <span class="werkzeug">Claude</span><span class="werkzeug">Perplexity</span>
+      <p class="wofuer">Bereitet Kundentermine vor und fasst Gesprächsnotizen zusammen.</p>
+    </div>
+    <div class="karte">
+      <div class="kreis" style="background: #28A1D7;">B</div>
+      <h3>Ben</h3>
+      <p class="rolle">Marketing</p>
+      <span class="werkzeug">ChatGPT</span><span class="werkzeug">Canva</span>
+      <p class="wofuer">Schreibt erste Entwürfe für Newsletter und baut daraus Grafiken.</p>
+    </div>
+    <div class="karte">
+      <div class="kreis" style="background: #012F42;">C</div>
+      <h3>Carla</h3>
+      <p class="rolle">Personal</p>
+      <span class="werkzeug">Copilot</span>
+      <p class="wofuer">Lorem ipsum dolor sit amet, Beispieltext folgt.</p>
+    </div>
+  </div>
+  <p style="margin-top:24px"><a class="knopf" href="anleitung.html">Wie trage ich mich ein?</a></p>
+</main>
+<footer>Beispielprojekt der KI Business School · Modul 4 · Woche 4</footer>
+</body>
+</html>
