@@ -27,7 +27,10 @@ veröffentlicht sie nach etwa 30 Sekunden unter https://modul4-wand.vercel.app
   Keyframes mit dem Vornamen als Präfix benennen (`@keyframes juergen-wackeln`). Kein `<script>`, keine
   Bilder oder Schriften von fremden Servern.
 - Keine vertraulichen Daten, keine Namen von Kundschaft.
-- Dann: `git pull --rebase`, committen mit „Karte von <Vorname>“, `git push`. Wird der Push abgelehnt,
+- Gibt es `karten/<vorname>.html` schon und gehört sie jemand anderem, häng den ersten Buchstaben des
+  Nachnamens an (`karten/anna-m.html`, `id="karte-anna-m"`).
+- Links nur mit `https://`.
+- Dann: nur die eigene Datei vormerken (`git add karten/<vorname>.html`), `git pull --rebase`, committen mit „Karte von <Vorname>“, `git push`. Wird der Push abgelehnt,
   noch einmal `git pull --rebase` und pushen. Da jede Person nur ihre eigene Datei ändert, gibt es keine
   Konflikte.
 - Sag am Ende in einem Satz, dass Vercel die Karte jetzt baut und sie in etwa 30 Sekunden auf https://modul4-wand.vercel.app erscheint.

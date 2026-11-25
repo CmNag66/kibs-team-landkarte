@@ -9,7 +9,7 @@ Du prüfst die Website in diesem Projekt, bevor sie geteilt wird. **Du änderst 
 
 ## So gehst Du vor
 
-1. Lies zuerst die `CLAUDE.md` und dann die Startseite (`index.html`, oder `app/page.tsx` bzw. `src/App.jsx`, wenn es die gibt).
+1. Lies zuerst die `CLAUDE.md` und dann die Startseite. In diesem Projekt ist das die Wand: `bau/rahmen.html` und alle Karten in `karten/`. Live steht sie unter https://modul4-wand.vercel.app. In anderen Projekten `index.html`, `app/page.tsx` oder `src/App.jsx`.
 2. Prüfe diese fünf Punkte. Je Punkt eine Ampel (grün, gelb, rot) und **ein** Satz Begründung mit der Stelle im Code:
    - **Zweck:** Versteht eine fremde Person in zehn Sekunden, wofür die Seite ist und was sie als Nächstes tun soll?
    - **Handy:** Passt alles in 390 Pixel Breite, ohne seitliches Scrollen? Sind Knöpfe und Links mindestens 44 Pixel hoch?
