@@ -10,6 +10,12 @@
     #karte-kunthanee h2 { color: #f2c200; text-shadow: 3px 3px 0 #c1121f, 0 0 12px rgba(0,0,0,.8); letter-spacing: .08em; }
     #karte-kunthanee h2::after { content: " 修羅"; font-size: .6em; color: #c1121f; text-shadow: none; }
     #karte-kunthanee p { text-shadow: 0 1px 6px #000; }
+    #karte-kunthanee .spruch { margin: 10px 0 8px; font-size: 1.35em; font-weight: 900; line-height: 1.15; letter-spacing: .02em; }
+    #karte-kunthanee .spruch span { display: block; }
+    #karte-kunthanee .spruch .key { color: #fff; text-shadow: 0 0 10px #7fd6ff, 2px 2px 0 #c1121f; }
+    #karte-kunthanee .spruch .gold { background: linear-gradient(100deg, #b8860b 20%, #fff3a8 45%, #f2c200 55%, #b8860b 80%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: none; animation: kunthanee-glanz 3s linear infinite; }
+    #karte-kunthanee .zeile { font-size: .92em; }
+    @keyframes kunthanee-glanz { from { background-position: 200% 0; } to { background-position: -200% 0; } }
     @keyframes kunthanee-schnee { from { transform: translateY(0); } to { transform: translateY(300px); } }
     @keyframes kunthanee-wiegen { 0%, 100% { transform: translateX(-50%) rotate(-1deg); } 50% { transform: translateX(-50%) rotate(1deg); } }
     @keyframes kunthanee-hieb { 0% { opacity: 1; transform: rotate(-28deg) scaleX(0); } 60% { opacity: 1; transform: rotate(-28deg) scaleX(1); } 100% { opacity: 0; transform: rotate(-28deg) scaleX(1); } }
@@ -24,5 +30,6 @@
   </svg>
   <p class="rolle">KI-ller</p>
   <h2>Kunthanee</h2>
-  <p>Ich baue CKeyDGold: KI baut schnell und billig, aber der Mensch bleibt der Engpass, weil er prüfen und freigeben muss. Darum gibt es gezielte Prüfprozesse, die ehrlich messen, was sie gebracht haben. Kontext ist der Schlüssel, gute Daten sind das Gold. Ein Hausbau erklärt als Bild, wie man mit KI am besten arbeitet, und ein Review-Cockpit ist der Ort, an dem der Mensch wirklich entscheidet.</p>
+  <p class="spruch"><span class="key">🔑 Context is Key.</span><span class="gold">🪙 Data is Gold.</span></p>
+  <p class="zeile">CKeyDGold: Die KI baut in Minuten, du gibst frei. Mein Review-Cockpit macht das Prüfen gezielt, messbar und so einfach wie ein Hausbau.</p>
 </article>
