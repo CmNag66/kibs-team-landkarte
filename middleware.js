@@ -52,7 +52,7 @@ button{margin-top:14px;width:100%;padding:12px;border:0;border-radius:10px;backg
 </style></head><body>
 <form method="post" action="/">
 <h1>Die Modul-4-Wand</h1>
-<p>Nur für die Gruppe der KI Business School. Den Code findest Du im Teams-Chat oder in Skool.</p>
+<p>Nur für die Gruppe der KI Business School. Den Code bekommst Du im Teams-Chat der Session.</p>
 <input name="code" type="password" autocomplete="off" placeholder="Gruppen-Code" autofocus aria-label="Gruppen-Code">
 <button type="submit">Zur Wand</button>
 ${fehler ? '<p class="f">Der Code stimmt nicht.</p>' : ""}
